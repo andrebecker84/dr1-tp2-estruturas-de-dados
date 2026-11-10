@@ -1,0 +1,30 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex09_pilha.py
+Exercício 9: Stack com capacidade 4, estado interno após cada operação
+──────────────────────────────────────────────────────────────────────
+passo  operação  resultado                                       array interno  topo  tamanho
+─────  ────────  ──────────────────────────────────────────────  ─────────────  ────  ───────
+    0  Stack(4)  pilha criada                                    [· · · ·]        -1      0/4
+    1  push(10)  ok                                              [10 · · ·]        0      1/4
+    2  push(20)  ok                                              [10 20 · ·]       1      2/4
+    3  push(30)  ok                                              [10 20 30 ·]      2      3/4
+    4  peek()    devolveu 30                                     [10 20 30 ·]      2      3/4
+    5  push(40)  ok                                              [10 20 30 40]     3      4/4
+    6  push(50)  Overflow: push(50) recusado: pilha cheia (4/4)  [10 20 30 40]     3      4/4
+    7  pop()     devolveu 40                                     [10 20 30 ·]      2      3/4
+    8  pop()     devolveu 30                                     [10 20 · ·]       1      2/4
+    9  push(60)  ok                                              [10 20 60 ·]      2      3/4
+   10  pop()     devolveu 60                                     [10 20 · ·]       1      2/4
+   11  pop()     devolveu 20                                     [10 · · ·]        0      1/4
+   12  pop()     devolveu 10                                     [· · · ·]        -1      0/4
+   13  pop()     Underflow: pop() recusado: pilha vazia          [· · · ·]        -1      0/4
+   14  peek()    Underflow: peek() recusado: pilha vazia         [· · · ·]        -1      0/4
+topo = índice do último elemento; -1 indica pilha vazia
+
+Verificações
+────────────
+[OK] push em pilha cheia levanta Overflow e não altera array nem topo
+[OK] pop devolve na ordem inversa da inserção (LIFO)
+[OK] pop em pilha vazia levanta Underflow e a pilha continua vazia
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯

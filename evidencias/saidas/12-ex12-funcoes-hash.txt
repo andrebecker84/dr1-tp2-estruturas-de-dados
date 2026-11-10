@@ -1,0 +1,45 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex12_funcoes_hash.py
+Exercício 12: funções hash com M = 10. Balde de cada resto k mod 10
+───────────────────────────────────────────────────────────────────
+função          k≡0  k≡1  k≡2  k≡3  k≡4  k≡5  k≡6  k≡7  k≡8  k≡9  baldes atingíveis
+──────────────  ───  ───  ───  ───  ───  ───  ───  ───  ───  ───  ─────────────────
+h1 = k mod 10     0    1    2    3    4    5    6    7    8    9                 10
+h2 = 7k mod 10    0    7    4    1    8    5    2    9    6    3                 10
+h3 = k² mod 10    0    1    4    9    6    5    6    9    4    1                  6
+[OK] h2 só renomeia os baldes de h1 (7 e 10 são primos entre si): mesma distribuição
+[OK] h3 nunca atinge os baldes 2, 3, 7 e 8
+
+Distribuição de 50 chaves (ideal: 5 por balde; com 10 baldes, ao menos 40 colisões)
+───────────────────────────────────────────────────────────────────────────────────
+chaves              função  baldes 0 a 9                   ocupados  maior balde  colisões
+──────────────────  ──────  ─────────────────────────────  ────────  ───────────  ────────
+sequenciais 0..49   h1       5  5  5  5  5  5  5  5  5  5        10            5        40
+sequenciais 0..49   h2       5  5  5  5  5  5  5  5  5  5        10            5        40
+sequenciais 0..49   h3       5 10  0  0 10  5 10  0  0 10         6           10        44
+
+aleatórias 0..9999  h1       1  7  4  3 12  7  3  6  2  5        10           12        40
+aleatórias 0..9999  h2       1  3  3  5  4  7  2  7 12  6        10           12        40
+aleatórias 0..9999  h3       1 12  0  0  6  7 15  0  0  9         6           15        44
+
+pares               h1      10  0 10  0 10  0 10  0 10  0         5           10        45
+pares               h2      10  0 10  0 10  0 10  0 10  0         5           10        45
+pares               h3      10  0  0  0 20  0 20  0  0  0         3           20        47
+
+múltiplos de 5      h1      25  0  0  0  0 25  0  0  0  0         2           25        48
+múltiplos de 5      h2      25  0  0  0  0 25  0  0  0  0         2           25        48
+múltiplos de 5      h3      25  0  0  0  0 25  0  0  0  0         2           25        48
+
+múltiplos de 10     h1      50  0  0  0  0  0  0  0  0  0         1           50        49
+múltiplos de 10     h2      50  0  0  0  0  0  0  0  0  0         1           50        49
+múltiplos de 10     h3      50  0  0  0  0  0  0  0  0  0         1           50        49
+
+Mesmo conjunto com M = 11 (primo)
+─────────────────────────────────
+chaves           baldes 0 a 10 de k mod 11         ocupados  maior balde
+───────────────  ────────────────────────────────  ────────  ───────────
+múltiplos de 5    5  4  4  5  5  5  4  4  4  5  5        11            5
+múltiplos de 10   5  4  4  4  4  4  5  5  5  5  5        11            5
+com M primo, um fator comum entre as chaves (5, 10) não concentra mais tudo em poucos baldes
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯

@@ -1,0 +1,23 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex03_primeiro_duplicado.py
+Exercício 3: primeiro valor duplicado
+─────────────────────────────────────
+entrada                                      duplicado  índice da 2ª ocorrência  acessos à hash
+───────────────────────────────────────────  ─────────  ───────────────────────  ──────────────
+['maçã', 'banana', 'uva', 'banana', 'kiwi']  'banana'                         3               7
+['x', 'x', 'y', 'z', 'w']                    'x'                              1               3
+['d1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd1']   'd1'                             6              13
+['Ana', 'ana', 'Bia', 'Caio', 'Bia']         'Bia'                            4               9
+['', 'a', ' ', 'b', '']                      ''                               4               9
+[OK] 5 entradas com o duplicado esperado
+
+Duplicado no fim (pior caso): hash x laços aninhados
+────────────────────────────────────────────────────
+    N  duplicado       acessos (hash)  comparações (aninhado)
+─────  ──────────────  ──────────────  ──────────────────────
+  101  pedido-0000000             201                   4.951
+1.001  pedido-0000000           2.001                 499.501
+5.001  pedido-0000000          10.001              12.497.501
+[OK] mesmo resultado; hash faz 2N - 1 acessos: uma passada só, O(N)
+becker@alienwarePC  ~/DR1_TP2  v3.15.2  0s
+❯

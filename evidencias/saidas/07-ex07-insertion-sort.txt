@@ -1,0 +1,40 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex07_insertion_sort.py
+Exercício 7: Insertion Sort no array da Aula 5 [4 2 7 1 3]
+──────────────────────────────────────────────────────────
+travessia  lista ao fim  comparações (acum.)  deslocamentos (acum.)
+─────────  ────────────  ───────────────────  ─────────────────────
+        1  [2 4 7 1 3]                     1                      1
+        2  [2 4 7 1 3]                     2                      1
+        3  [1 2 4 7 3]                     5                      4
+        4  [1 2 3 4 7]                     8                      6
+8 comparações + 6 deslocamentos + 4 remoções + 4 inserções de temp = 22 passos, como no slide
+
+Quase ordenadas, invertidas e os outros estados
+───────────────────────────────────────────────
+    N  estado inicial  comparações  deslocamentos  inversões
+─────  ──────────────  ───────────  ─────────────  ─────────
+   10  ordenada                  9              0          0
+   10  quase ordenada           10              1          1
+   10  aleatória                34             28         28
+   10  invertida                45             45         45
+  100  ordenada                 99              0          0
+  100  quase ordenada          104              5          5
+  100  aleatória             2.597          2.502      2.502
+  100  invertida             4.950          4.950      4.950
+1.000  ordenada                999              0          0
+1.000  quase ordenada        1.043             44         44
+1.000  aleatória           249.438        248.445    248.445
+1.000  invertida           499.500        499.500    499.500
+[OK] saídas ordenadas; deslocamentos = inversões da entrada em todos os casos
+
+Insertion x Selection (N = 1.000): comparações + deslocamentos ou trocas
+────────────────────────────────────────────────────────────────────────
+estado inicial  Insertion Sort  Selection Sort  menos passos
+──────────────  ──────────────  ──────────────  ────────────
+ordenada                   999         499.500     Insertion
+quase ordenada           1.087         499.544     Insertion
+aleatória              497.883         500.495     Insertion
+invertida              999.000         500.000     Selection
+becker@alienwarePC  ~/DR1_TP2  v3.15.2  0s
+❯

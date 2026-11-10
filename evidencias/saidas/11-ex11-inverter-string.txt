@@ -1,0 +1,35 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex11_inverter_string.py
+Exercício 11: inverter "Infnet" com uma pilha
+─────────────────────────────────────────────
+passo  operação      pilha (array)  topo  saída até aqui
+─────  ────────────  ─────────────  ────  ──────────────
+    1  push('I')     [I · · · · ·]     0
+    2  push('n')     [I n · · · ·]     1
+    3  push('f')     [I n f · · ·]     2
+    4  push('n')     [I n f n · ·]     3
+    5  push('e')     [I n f n e ·]     4
+    6  push('t')     [I n f n e t]     5
+    7  pop() -> 't'  [I n f n e ·]     4  t
+    8  pop() -> 'e'  [I n f n · ·]     3  te
+    9  pop() -> 'n'  [I n f · · ·]     2  ten
+   10  pop() -> 'f'  [I n · · · ·]     1  tenf
+   11  pop() -> 'n'  [I · · · · ·]     0  tenfn
+   12  pop() -> 'I'  [· · · · · ·]    -1  tenfnI
+"Infnet" -> "tenfnI": 6 push + 6 pop = 12 operações O(1)
+
+Testes com diferentes strings
+─────────────────────────────
+entrada          invertida         N  conferida
+───────────────  ───────────────  ──  ─────────
+'algoritmo'      'omtirogla'       9    [OK]
+'Infnet'         'tenfnI'          6    [OK]
+'arara'          'arara'           5    [OK]
+'Olá, mundo!'    '!odnum ,álO'    11    [OK]
+'ação e reação'  'oãçaer e oãça'  13    [OK]
+'2026-11-09'     '90-11-6202'     10    [OK]
+'a'              'a'               1    [OK]
+''               ''                0    [OK]
+[OK] caractere i da saída = caractere N - 1 - i da entrada, e inverter duas vezes devolve o original
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯

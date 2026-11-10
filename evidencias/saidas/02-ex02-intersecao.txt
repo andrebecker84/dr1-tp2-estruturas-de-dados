@@ -1,0 +1,32 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex02_intersecao.py
+Exercício 2: interseção de arrays com hash table
+────────────────────────────────────────────────
+a                       b                        comuns (ordem de b)
+──────────────────────  ───────────────────────  ───────────────────
+[1, 2, 3, 4, 5]         [4, 5, 6, 7]             [4, 5]
+[1, 2, 2, 3]            [2, 2, 4, 3]             [2, 3]
+['ana', 'bia', 'caio']  ['caio', 'dani', 'ana']  ['caio', 'ana']
+[1, 2, 3]               [4, 5, 6]                []
+[]                      [1, 2]                   []
+[OK] 5 exemplos com o resultado esperado
+
+Laços aninhados x hash table (N = M)
+────────────────────────────────────
+N = M  comuns  comparações (aninhado)  acessos (hash)
+─────  ──────  ──────────────────────  ──────────────
+500       167                 209.400           1.167
+1.000     334                 833.517           2.334
+2.000     667               3.329.445           4.667
+[OK] as duas versões devolvem a mesma lista
+
+Validação com arrays grandes (a: pares, b: múltiplos de 3)
+──────────────────────────────────────────────────────────
+N = M       comuns  acessos (hash)  acessos / (N+M)   N x M (aninhado)    tempo
+─────────  ───────  ──────────────  ───────────────  ─────────────────  ───────
+10.000       3.334          23.334             1,17        100.000.000  0,003 s
+100.000     33.334         233.334             1,17     10.000.000.000  0,077 s
+1.000.000  333.334       2.333.334             1,17  1.000.000.000.000  0,937 s
+[OK] comuns = múltiplos de 6, sem repetidos e na quantidade esperada; acessos ≤ N + 2M
+becker@alienwarePC  ~/DR1_TP2  v3.15.2  2s
+❯

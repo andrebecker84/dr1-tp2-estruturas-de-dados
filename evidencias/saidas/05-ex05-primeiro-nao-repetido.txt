@@ -1,0 +1,28 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex05_primeiro_nao_repetido.py
+Exercício 5: primeiro caractere não repetido
+────────────────────────────────────────────
+texto          resultado   N  acessos à hash
+─────────────  ─────────  ──  ──────────────
+'swiss'        'w'         5              12
+'stress'       't'         6              14
+'level'        'v'         5              13
+'abacabad'     'c'         8              20
+'aabbcdc'      'd'         7              20
+'Infnet'       'I'         6              13
+'aabbccddeez'  'z'        11              33
+'aabbcc'       None        6              18
+''             None        0               0
+[OK] 9 exemplos com o resultado esperado
+
+Pior caso: o único caractere não repetido é o último
+────────────────────────────────────────────────────
+N          resultado    acessos  acessos / N
+─────────  ─────────  ─────────  ───────────
+1.000            'z'      3.000           3N
+10.000           'z'     30.000           3N
+100.000          'z'    300.000           3N
+1.000.000        'z'  3.000.000           3N
+[OK] 2 acessos por caractere na contagem + 1 na verificação = 3N: O(N)
+becker@alienwarePC  ~/DR1_TP2  v3.15.2  0s
+❯

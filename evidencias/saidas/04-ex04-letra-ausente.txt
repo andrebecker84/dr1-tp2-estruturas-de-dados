@@ -1,0 +1,26 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex04_letra_ausente.py
+Exercício 4: letra ausente do alfabeto
+──────────────────────────────────────
+texto                                                         ausente    caracteres  acessos
+────────────────────────────────────────────────────────────  ─────────  ──────────  ───────
+The quick brown fox jumps over the lay dog                    z                  42       60
+Jane quer LP, fax, CD, giz, TV e bom whiky.                   s                  43       55
+À noite, vovô Kowalsky vê o ímã cair no pé do pinguim que...  f                 116      117
+ABCDEFGHIJKLMNOPQRSTUVWXY                                     z                  25       51
+Sphinx of black quartz, judge my vo... 2026!                  w                  44       54
+Zebras caolhas de Java querem mandar fax para moça gigant...  (nenhuma)          71       84
+Um pequeno jabuti xereta viu dez cegonhas felizes.            k, w, y            50       68
+[OK] 7 textos: acentos, maiúsculas, dígitos e pontuação tratados
+
+Crescimento: a frase repetida até N caracteres (falta o w)
+──────────────────────────────────────────────────────────
+N (caracteres)   letras  acessos (letras + 26)  ausente
+──────────────  ───────  ─────────────────────  ───────
+1.000               757                    783        w
+10.000            7.568                  7.594        w
+100.000          75.677                 75.703        w
+1.000.000       756.757                756.783        w
+[OK] 1 acesso por letra + 26 na verificação final: O(N) de tempo e O(1) de espaço
+becker@alienwarePC  ~/DR1_TP2  v3.15.2  0s
+❯

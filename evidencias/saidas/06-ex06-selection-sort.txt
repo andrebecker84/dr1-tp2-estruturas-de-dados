@@ -1,0 +1,32 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex06_selection_sort.py
+Exercício 6: Selection Sort no array da Aula 4 [4 2 7 1 3]
+──────────────────────────────────────────────────────────
+travessia  lista ao fim  comparações (acum.)  trocas (acum.)
+─────────  ────────────  ───────────────────  ──────────────
+        1  [1 2 7 4 3]                     4               1
+        2  [1 2 7 4 3]                     7               1
+        3  [1 2 3 4 7]                     9               2
+        4  [1 2 3 4 7]                    10               2
+2ª e 4ª travessias: o menor já estava no lugar, então não houve troca
+
+Listas em diferentes estados iniciais
+─────────────────────────────────────
+    N  estado inicial  comparações  trocas  N(N-1)/2
+─────  ──────────────  ───────────  ──────  ────────
+   10  ordenada                 45       0        45
+   10  quase ordenada           45       1        45
+   10  aleatória                45       8        45
+   10  invertida                45       5        45
+  100  ordenada              4.950       0     4.950
+  100  quase ordenada        4.950       5     4.950
+  100  aleatória             4.950      96     4.950
+  100  invertida             4.950      50     4.950
+1.000  ordenada            499.500       0   499.500
+1.000  quase ordenada      499.500      44   499.500
+1.000  aleatória           499.500     995   499.500
+1.000  invertida           499.500     500   499.500
+[OK] saídas ordenadas; comparações = N(N-1)/2 em todo estado; trocas ≤ N - 1
+N x10  ->  comparações x~100: O(N²) no melhor, no médio e no pior caso
+becker@alienwarePC  ~/DR1_TP2  v3.15.2  0s
+❯

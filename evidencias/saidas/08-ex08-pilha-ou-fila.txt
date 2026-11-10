@@ -1,0 +1,31 @@
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯ python3 ex08_pilha_ou_fila.py
+Exercício 8: atendimento na ordem de chegada, fila (FIFO) x pilha (LIFO)
+────────────────────────────────────────────────────────────────────────
+ t  evento   fila: array  fila atende  pilha: array  pilha atende
+──  ───────  ───────────  ───────────  ────────────  ────────────
+ 1  chega A  [A · · · ·]               [A · · · ·]
+ 2  chega B  [A B · · ·]               [A B · · ·]
+ 3  atende   [· B · · ·]       A       [A · · · ·]        B
+ 4  chega C  [· B C · ·]               [A C · · ·]
+ 5  chega D  [· B C D ·]               [A C D · ·]
+ 6  atende   [· · C D ·]       B       [A C · · ·]        D
+ 7  chega E  [· · C D E]               [A C E · ·]
+ 8  atende   [· · · D E]       C       [A C · · ·]        E
+ 9  atende   [· · · · E]       D       [A · · · ·]        C
+10  atende   [· · · · ·]       E       [· · · · ·]        A
+
+Espera de cada solicitação (instante do atendimento - instante da chegada)
+──────────────────────────────────────────────────────────────────────────
+solicitação  chegou em t  espera na fila  espera na pilha
+───────────  ───────────  ──────────────  ───────────────
+A                      1               2                9
+B                      2               4                1
+C                      4               4                5
+D                      5               4                1
+E                      7               3                1
+ordem de atendimento  fila: A B C D E   pilha: B D E C A
+[OK] a fila atende exatamente na ordem de chegada
+[OK] a pilha quebra a regra: o último a chegar passa na frente e A espera até o fim
+becker@alienwarePC  ~/DR1_TP2  v3.15.2
+❯
